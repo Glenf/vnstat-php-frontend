@@ -1,16 +1,17 @@
+$border : #acacac;
+
+$linkColor : #08c;
+$linkColorHover : darken($linkColor, 5%);
+$bgColor : #fff;
+$bgColorHover : darken($bgColor, 5%);
+$bgColorActive : lighten($linkColor, 55%);
+
 .navigation {
   background-color : #fafafa;
 }
 
 .nav {
 
-   $border : #acacac;
-
-   $linkColor : #08c;
-   $linkColorHover : darken($linkColor, 5%);
-   $bgColor : #fff;
-   $bgColorHover : darken($bgColor, 5%);
-   $bgColorActive : lighten($linkColor, 55%);
 
   list-style : none outside none;
   padding-left : .5em;
@@ -22,50 +23,90 @@
     margin-bottom : 0;
   }
 
-  li {
-    a {
-      display : block;
-      margin-left : -.5em;
-      margin-right : -.5em;
+  a {
+    display : block;
+    margin-left : -.5em;
+    margin-right : -.5em;
 
+    text-decoration : none;
+
+    // Big enough for touch
+    padding : .4em 1em;
+
+
+    // Theme
+    color : $linkColor;
+    background-color : $bgColor;
+    text-shadow : 0 1px 0 rgba(255,255,255,.5);
+    border: 1px solid $border;
+    margin-top : -1px;
+
+    &:hover {
       text-decoration : none;
-
-      // Big enough for touch
-      padding : .4em 1em;
-
-
-      // Theme
-      color : $linkColor;
-      background-color : $bgColor;
-      text-shadow : 0 1px 0 rgba(255,255,255,.5);
-      border: 1px solid $border;
-      margin-top : -1px;
-
-      &:hover {
-        text-decoration : none;
-        color : $linkColorHover;
-        background-color : $bgColorHover;
-      }
-
+      color : $linkColorHover;
+      background-color : $bgColorHover;
     }
-    // a
+  }
 
-      &.active > a{
-        background-color : $bgColorActive;
-      }
-
+  .active > a{
+    background-color : $bgColorActive;
+  }
+  
+  li {
     li {
-      // li li
       a {
         padding-left : 1.8em;
       }
     }
   }
+
+}
+
+// Javascript actions
+.navigation {
+
+  .nav-toggle {
+    display : block;
+    margin : 0;
+    padding : .4em 1em;
+
+    color : $linkColor;
+    background-color : $bgColor;
+    text-shadow : 0 1px 0 rgba(255,255,255,.5);
+    border: 1px solid $border;
+    margin-top : -1px;
+
+    &:hover {
+      text-decoration : none;
+      color : $linkColorHover;
+      background-color : $bgColorHover;
+    }
+  }
+
+  .nav {
+    display : none;
+  }
+
+  &.nav-open .nav {
+    display : block;
+  }
+
 }
 
 
 @media only screen and (min-width : 768px ){
   .nav-toggle {
     display : none;
+  }
+
+  .nav {
+    li {
+      ul {
+        display : none;
+      }
+      &.active ul {
+        display : block;
+      }
+    }
   }
 }

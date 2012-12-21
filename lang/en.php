@@ -1,6 +1,7 @@
 <?php
 
 // sidebar labels
+$L['Interfaces'] = 'Interfaces';
 $L['summary'] = 'summary';
 $L['hours'] = 'hours';
 $L['days'] = 'days';

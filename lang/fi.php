@@ -1,6 +1,7 @@
 <?php
 
 // sidebar labels
+$L['Interfaces'] = 'Verkkoyhteydet';
 $L['summary'] = 'yhteenveto';
 $L['hours'] = 'tunnit';
 $L['days'] = 'päivät';
