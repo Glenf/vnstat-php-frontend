@@ -1,73 +1,76 @@
-@import (../reset.css);
-
+@import url(../reset.css);
 * {
-  box-sizing : border-box;
-}
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
 
 .cf:before,
 .cf:after {
   content: " ";
-  display: table;
-}
+  display: table; }
 
 .cf:after {
-  clear: both;
-}
+  clear: both; }
 
 .cf {
-  *zoom: 1;
-}
+  *zoom: 1; }
 
 /* Grid */
+@media only screen and (min-width: 768px) {
+  .navigation,
+  .content {
+    display: block;
+    float: left;
+    margin-right: 0%;
+    margin-left: 0; }
 
-@media only screen and (min-width:768px ){
-.navigation,
-.content {
-  display:block;
-  float:left;
-  margin-right:0%;
-  margin-left:0;
-}
+  .navigation {
+    width: 20%; }
 
-.navigation {
-  width : 20%;
-}
-.content {
-  margin-left : 2%;
-  width : 78%;
-}
-}
-
+  .content {
+    margin-left: 2%;
+    width: 78%; } }
 /* Theme */
-
 /* Navigation */
-
 .navigation {
-
-}
+  background-color: #fafafa; }
 
 .nav {
-  list-style : none outside none;
-}
+  list-style: none outside none;
+  padding-left: .5em; }
 
-
+@media only screen and (min-width: 768px) {
+  .nav-toggle {
+    display: none; } }
 /* Graph */
-
 .graph img {
-  max-width : 100%;
-}
+  max-width: 100%; }
 
-/* Data table */
+/* Table */
+table {
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0; }
 
-.data-table {
-  width : 100%;
-}
-
+.data-table th,
+.data-table td {
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #f0f0f0; }
 .data-table th {
-  font-weight : bold;
-}
-
-.data-table tr:nth-of-type(2n+2) {
-  background-color : #ccc;
-}
-
+  font-weight: bold; }
+.data-table thead th {
+  vertical-align: bottom; }
+.data-table caption + thead tr:first-child th,
+.data-table caption + thead tr:first-child td,
+.data-table colgroup + thead tr:first-child th,
+.data-table colgroup + thead tr:first-child td,
+.data-table thead:first-child tr:first-child th,
+.data-table thead:first-child tr:first-child td {
+  border-top: 0; }
+.data-table tbody + tbody {
+  border-top: 2px solid #f0f0f0; }
+.data-table tbody > tr:nth-child(odd) > td,
+.data-table tbody > tr:nth-child(odd) > th {
+  background-color: #f0f0f0; }

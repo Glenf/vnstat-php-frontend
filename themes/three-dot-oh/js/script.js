@@ -34,7 +34,7 @@ function removeClass(elm, strClass) {
 	"use strict";
 	if (!!elm) {
 		var re = new RegExp(strClass, 'g');
-		elm.className = elm.className.replace(re, '');
+		elm.className = elm.className.replace(re, '').trim();
 	}
 }
 
@@ -68,7 +68,7 @@ var mobileNav = {
 	tg : function(el){
 		el.addEventListener('click', function (e) {
 			e.preventDefault();
-			toggleClass(this, 'nav-open');
+			toggleClass(this.parentNode, 'nav-open');
 		}, false);
 	},
 	load: function () {
