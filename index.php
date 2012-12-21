@@ -112,7 +112,7 @@
 
     function write_data_table($caption, $tab)
     {
-        print "<table class=data-table cellspacing=0>\n";
+        print "<table class=data-table >\n";
         print "<caption>$caption</caption>\n";
         print "<tr>";
         print "<th class=\"label\">&nbsp;</th>";
@@ -158,17 +158,13 @@
 
   
   <link rel="stylesheet" href="themes/<?php echo $style ?>/style.css"/>
-<?php
-    if (is_file('themes/'.$style.'/js/script.js') ) {
-      echo '<script src="themes/'.$style.'/js/script.js"></script>';
-    }
-?>
 
 </head>
 <body class=<?php echo $style ?>>
 
 <div class="wrap cf" id=wrap>
   <nav class=navigation id=sidebar>
+    <a class="nav-toggle">Toggle</a>
     <?php write_side_bar(); ?>
   </nav>
   <div class=content id=content>
@@ -210,6 +206,12 @@
     <div id="footer"><a href="http://www.sqweek.com/">vnStat PHP frontend</a> 1.5.2 - &copy;2006-2011 Bjorge Dijkstra (bjd _at_ jooz.net)</div>
   </div>
 </div> <!-- .wrap -->
+
+<?php
+    if (is_file('themes/'.$style.'/js/script.js') ) {
+      echo '<script src="themes/'.$style.'/js/script.js"></script>';
+    }
+?>
 
 </body>
 </html>

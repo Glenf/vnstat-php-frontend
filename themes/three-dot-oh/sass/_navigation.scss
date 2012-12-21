@@ -1,0 +1,15 @@
+.navigation {
+  background-color : #fafafa;
+}
+
+.nav {
+  list-style : none outside none;
+  padding-left : .5em;
+}
+
+
+@media only screen and (min-width : 768px ){
+  .nav-toggle {
+    display : none;
+  }
+}
