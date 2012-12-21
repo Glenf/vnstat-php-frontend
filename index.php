@@ -37,22 +37,28 @@
         $p = "&amp;graph=$graph&amp;style=$style";
 
         print '<ul class="iface nav">';
-        foreach ($iface_list as $if)
-        {
+        foreach ($iface_list as $if) {
+
+          $iface_class = "iface";
             if ($iface == $if) {
-                print '<li class="iface active">';
-            } else {
-                print '<li class=iface>';
+              $iface_class .= " active";
             }
-            print "<a href=\"$script?if=$if$p\">";
+
+            print "<li class=\"$iface_class\"><a href=\"$script?if=$if$p\">";
             if ( isset($iface_title[$if]) ) {
                 print $iface_title[$if];
             } else {
                 print $if;
             }
             print '</a> <ul class="page">';
+
             foreach ($page_list as $pg) {
-                print "<li class=\"page\"><a href=\"$script?if=$if$p&amp;page=$pg\">".$page_title[$pg]."</a>\n";
+              $page_class = 'page';
+              
+              if ($iface == $if && $page == $pg) {
+                $page_class .= ' active';
+              }
+                print "<li class=\"$page_class\"><a href=\"$script?if=$if$p&amp;page=$pg\">".$page_title[$pg]."</a>\n";
             }
             print "</ul>\n";
         }
@@ -163,7 +169,7 @@
 
 <div class="wrap cf" id=wrap>
   <nav class=navigation id=sidebar>
-    <a class="nav-toggle">Toggle</a>
+  <a class="nav-toggle"><?php echo T('Interfaces') ?></a>
     <?php write_side_bar(); ?>
   </nav>
   <div class=content id=content>
