@@ -70,8 +70,8 @@
     define('SVG_FONT', 'Verdana');
 
     // Default theme
-    define('DEFAULT_COLORSCHEME', 'light');
-    
+    define('DEFAULT_COLORSCHEME', 'three-dot-oh');
+
     // SVG Depth scaling factor
     define('SVG_DEPTH_SCALING', 1);
 

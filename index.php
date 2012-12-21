@@ -36,30 +36,25 @@
 
         $p = "&amp;graph=$graph&amp;style=$style";
 
-        print "<ul class=\"iface\">\n";
+        print '<ul class="iface nav">';
         foreach ($iface_list as $if)
         {
             if ($iface == $if) {
-                print "<li class=\"iface active\">";
+                print '<li class="iface active">';
             } else {
-                print "<li class=\"iface\">";
+                print '<li class=iface>';
             }
             print "<a href=\"$script?if=$if$p\">";
-            if (isset($iface_title[$if]))
-            {
+            if ( isset($iface_title[$if]) ) {
                 print $iface_title[$if];
-            }
-            else
-            {
+            } else {
                 print $if;
             }
-            print "</a>";
-            print "<ul class=\"page\">\n";
-            foreach ($page_list as $pg)
-            {
-                print "<li class=\"page\"><a href=\"$script?if=$if$p&amp;page=$pg\">".$page_title[$pg]."</a></li>\n";
+            print '</a> <ul class="page nav">';
+            foreach ($page_list as $pg) {
+                print "<li class=\"page\"><a href=\"$script?if=$if$p&amp;page=$pg\">".$page_title[$pg]."</a>\n";
             }
-            print "</ul></li>\n";
+            print "</ul>\n";
         }
         print "</ul>\n";
     }
@@ -117,10 +112,10 @@
 
     function write_data_table($caption, $tab)
     {
-        print "<table width=\"100%\" cellspacing=\"0\">\n";
+        print "<table class=data-table cellspacing=0>\n";
         print "<caption>$caption</caption>\n";
         print "<tr>";
-        print "<th class=\"label\" style=\"width:120px;\">&nbsp;</th>";
+        print "<th class=\"label\">&nbsp;</th>";
         print "<th class=\"label\">".T('In')."</th>";
         print "<th class=\"label\">".T('Out')."</th>";
         print "<th class=\"label\">".T('Total')."</th>";
@@ -152,29 +147,42 @@
     // html start
     //
     header('Content-type: text/html; charset=utf-8');
-    print '<?xml version="1.0"?>';
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>vnStat - PHP frontend</title>
-  <link rel="stylesheet" type="text/css" href="themes/<?php echo $style ?>/style.css"/>
-</head>
-<body>
+  <meta name="viewport" content="width=device-width">
 
-<div id="wrap">
-  <div id="sidebar"><?php write_side_bar(); ?></div>
-   <div id="content">
-    <div id="header"><?php print T('Traffic data for')." $iface_title[$iface] ($iface)";?></div>
-    <div id="main">
+  
+
+  <link rel="stylesheet" href="themes/<?php echo $style ?>/style.css"/>
+</head>
+<body class=<?php echo $style ?>>
+
+<div class="wrap cf" id=wrap>
+  <nav class=navigation id=sidebar>
+    <?php write_side_bar(); ?>
+  </nav>
+  <div class=content id=content>
+    <div class=header id=header>
+      <h1><?php print T('Traffic data for')." $iface_title[$iface] ($iface)";?></h1>
+    </div>
+    <div class=main id=main>
+
     <?php
     $graph_params = "if=$iface&amp;page=$page&amp;style=$style";
-    if ($page != 's')
+    if ($page != 's') {
+      echo '<div class=graph>';
         if ($graph_format == 'svg') {
-	     print "<object type=\"image/svg+xml\" width=\"692\" height=\"297\" data=\"graph_svg.php?$graph_params\"></object>\n";
+       print "<object type=\"image/svg+xml\" width=\"692\" height=\"297\" data=\"graph_svg.php?$graph_params\"></object>\n";
         } else {
-	     print "<img src=\"graph.php?$graph_params\" alt=\"graph\"/>\n";
+       print "<img src=\"graph.php?$graph_params\" alt=\"graph\"/>\n";
         }
+      echo '</div> <!-- .graph -->';
+     }
 
     if ($page == 's')
     {
@@ -196,6 +204,7 @@
     </div>
     <div id="footer"><a href="http://www.sqweek.com/">vnStat PHP frontend</a> 1.5.2 - &copy;2006-2011 Bjorge Dijkstra (bjd _at_ jooz.net)</div>
   </div>
-</div>
+</div> <!-- .wrap -->
 
-</body></html>
+</body>
+</html>
