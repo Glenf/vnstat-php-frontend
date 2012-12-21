@@ -4,6 +4,14 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem; }
+
 .cf:before,
 .cf:after {
   content: " ";
@@ -37,7 +45,31 @@
 
 .nav {
   list-style: none outside none;
-  padding-left: .5em; }
+  padding-left: .5em;
+  padding-right: .5em;
+  margin-bottom: 0; }
+  .nav ul {
+    list-style: none outside none;
+    margin-bottom: 0; }
+  .nav li a {
+    display: block;
+    margin-left: -0.5em;
+    margin-right: -0.5em;
+    text-decoration: none;
+    padding: .4em 1em;
+    color: #0088cc;
+    background-color: white;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    border: 1px solid #acacac;
+    margin-top: -1px; }
+    .nav li a:hover {
+      text-decoration: none;
+      color: #0077b3;
+      background-color: #f2f2f2; }
+  .nav li.active > a {
+    background-color: #e5f6ff; }
+  .nav li li a {
+    padding-left: 1.8em; }
 
 @media only screen and (min-width: 768px) {
   .nav-toggle {
@@ -57,7 +89,7 @@ table {
   padding: 8px;
   text-align: left;
   vertical-align: top;
-  border-top: 1px solid #f0f0f0; }
+  border-top: 1px solid #dddddd; }
 .data-table th {
   font-weight: bold; }
 .data-table thead th {
@@ -70,7 +102,64 @@ table {
 .data-table thead:first-child tr:first-child td {
   border-top: 0; }
 .data-table tbody + tbody {
-  border-top: 2px solid #f0f0f0; }
+  border-top: 2px solid #dddddd; }
 .data-table tbody > tr:nth-child(odd) > td,
 .data-table tbody > tr:nth-child(odd) > th {
-  background-color: #f0f0f0; }
+  background-color: #f9f9f9; }
+
+.span-95 {
+  width: 95%; }
+
+.span-90 {
+  width: 90%; }
+
+.span-85 {
+  width: 85%; }
+
+.span-80 {
+  width: 80%; }
+
+.span-75 {
+  width: 75%; }
+
+.span-70 {
+  width: 70%; }
+
+.span-65 {
+  width: 65%; }
+
+.span-60 {
+  width: 60%; }
+
+.span-55 {
+  width: 55%; }
+
+.span-50 {
+  width: 50%; }
+
+.span-45 {
+  width: 45%; }
+
+.span-40 {
+  width: 40%; }
+
+.span-35 {
+  width: 35%; }
+
+.span-30 {
+  width: 30%; }
+
+.span-25 {
+  width: 25%; }
+
+.span-20 {
+  width: 20%; }
+
+.span-15 {
+  width: 15%; }
+
+.span-10 {
+  width: 10%; }
+
+.span-5 {
+  width: 5%; }
