@@ -65,10 +65,14 @@ $bgColorActive : lighten($linkColor, 55%);
 // Javascript actions
 .navigation {
 
+  margin: 0 0 .5em 0;
+
   .nav-toggle {
     display : block;
     margin : 0;
     padding : .4em 1em;
+
+    text-align : center;
 
     color : $linkColor;
     background-color : $bgColor;
@@ -95,8 +99,15 @@ $bgColorActive : lighten($linkColor, 55%);
 
 
 @media only screen and (min-width : 768px ){
-  .nav-toggle {
-    display : none;
+
+  .navigation {
+    .nav-toggle {
+      display : none;
+    }
+
+    .nav {
+      display : block;
+    }
   }
 
   .nav {

@@ -65,8 +65,10 @@ body {
 
 /* Graph */
 
-.graph img {
-  max-width : 100%;
+.graph{
+  img, object {
+    max-width : 100%;
+  }
 }
 
 /* Table */
