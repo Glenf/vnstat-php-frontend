@@ -1,0 +1,72 @@
+@import (../reset.css);
+
+* {
+  box-sizing : border-box;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/* Grid */
+
+.navigation,
+.content {
+  display:block;
+  float:left;
+  margin-right:0%;
+  margin-left:0;
+}
+
+.navigation {
+  width : 20%;
+}
+.content {
+  margin-left : 2%;
+  width : 78%;
+}
+
+
+/* Theme */
+
+/* Navigation */
+
+.navigation {
+
+}
+
+.nav {
+  list-style : none outside none;
+}
+
+
+/* Graph */
+
+.graph img {
+  max-width : 100%;
+}
+
+/* Data table */
+
+.data-table {
+  width : 100%;
+}
+
+.data-table th {
+  font-weight : bold;
+}
+
+.data-table tr:nth-of-type(2n+2) {
+  background-color : #ccc;
+}
+
