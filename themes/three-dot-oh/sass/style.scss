@@ -1,8 +1,21 @@
 @import 'bourbon/bourbon';
+@import '_mixins';
 @import url(../reset.css);
 
 * {
   @include box-sizing(border-box);
+}
+
+html {
+  font-size : 62.5%; // Sert for 10 base
+}
+
+body {
+  //font-family : $georgia;
+  //font-family : $lucida-grande;
+  font-family : $helvetica;
+
+  @include font-size(16);
 }
 
 .cf:before,
@@ -18,6 +31,8 @@
 .cf {
   *zoom: 1;
 }
+
+@import '_typography';
 
 /* Grid */
 

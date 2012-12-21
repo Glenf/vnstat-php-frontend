@@ -6,7 +6,8 @@ table {
 
 .data-table {
 
-  $tableBorder : #f0f0f0;
+  $tableBorder : #ddd;
+  $tableStripe : #F9F9F9;
 
   // Cells
   th,
@@ -47,8 +48,16 @@ table {
   tbody {
     > tr:nth-child(odd) > td,
     > tr:nth-child(odd) > th {
-      background-color: $tableBorder; 
+      background-color: $tableStripe; 
     }
   }
 
+}
+
+
+// Table cell widths
+$w : 95;
+@while $w > 0 {
+  .span-#{$w} {width : $w * 1%}
+  $w : $w - 5;
 }

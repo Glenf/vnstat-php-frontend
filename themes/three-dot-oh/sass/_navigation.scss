@@ -3,8 +3,64 @@
 }
 
 .nav {
+
+   $border : #acacac;
+
+   $linkColor : #08c;
+   $linkColorHover : darken($linkColor, 5%);
+   $bgColor : #fff;
+   $bgColorHover : darken($bgColor, 5%);
+   $bgColorActive : lighten($linkColor, 55%);
+
   list-style : none outside none;
   padding-left : .5em;
+  padding-right : .5em;
+  margin-bottom : 0;
+
+  ul {
+    list-style : none outside none;
+    margin-bottom : 0;
+  }
+
+  li {
+    a {
+      display : block;
+      margin-left : -.5em;
+      margin-right : -.5em;
+
+      text-decoration : none;
+
+      // Big enough for touch
+      padding : .4em 1em;
+
+
+      // Theme
+      color : $linkColor;
+      background-color : $bgColor;
+      text-shadow : 0 1px 0 rgba(255,255,255,.5);
+      border: 1px solid $border;
+      margin-top : -1px;
+
+      &:hover {
+        text-decoration : none;
+        color : $linkColorHover;
+        background-color : $bgColorHover;
+      }
+
+    }
+    // a
+
+      &.active > a{
+        background-color : $bgColorActive;
+      }
+
+    li {
+      // li li
+      a {
+        padding-left : 1.8em;
+      }
+    }
+  }
 }
 
 

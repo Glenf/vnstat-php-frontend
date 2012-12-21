@@ -50,7 +50,7 @@
             } else {
                 print $if;
             }
-            print '</a> <ul class="page nav">';
+            print '</a> <ul class="page">';
             foreach ($page_list as $pg) {
                 print "<li class=\"page\"><a href=\"$script?if=$if$p&amp;page=$pg\">".$page_title[$pg]."</a>\n";
             }
@@ -114,12 +114,12 @@
     {
         print "<table class=data-table >\n";
         print "<caption>$caption</caption>\n";
-        print "<tr>";
-        print "<th class=\"label\">&nbsp;</th>";
-        print "<th class=\"label\">".T('In')."</th>";
-        print "<th class=\"label\">".T('Out')."</th>";
-        print "<th class=\"label\">".T('Total')."</th>";
-        print "</tr>\n";
+        print "<thead><tr>";
+        print "<th class=span-15>&nbsp;</th>";
+        print "<th class=span-25>".T('In')."</th>";
+        print "<th class=span-25>".T('Out')."</th>";
+        print "<th class=span-25>".T('Total')."</th>";
+        print "</tr></thead>\n";
 
         for ($i=0; $i<count($tab); $i++)
         {
@@ -129,12 +129,11 @@
                 $rx = kbytes_to_string($tab[$i]['rx']);
                 $tx = kbytes_to_string($tab[$i]['tx']);
                 $total = kbytes_to_string($tab[$i]['rx']+$tab[$i]['tx']);
-                $id = ($i & 1) ? 'odd' : 'even';
                 print "<tr>";
-                print "<td class=\"label_$id\">$t</td>";
-                print "<td class=\"numeric_$id\">$rx</td>";
-                print "<td class=\"numeric_$id\">$tx</td>";
-                print "<td class=\"numeric_$id\">$total</td>";
+                print "<td>$t</td>";
+                print "<td>$rx</td>";
+                print "<td>$tx</td>";
+                print "<td>$total</td>";
                 print "</tr>\n";
              }
         }
