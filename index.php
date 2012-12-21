@@ -157,7 +157,6 @@
   <meta name="viewport" content="width=device-width">
 
   
-
   <link rel="stylesheet" href="themes/<?php echo $style ?>/style.css"/>
 </head>
 <body class=<?php echo $style ?>>
@@ -173,11 +172,11 @@
     <div class=main id=main>
 
     <?php
-    $graph_params = "if=$iface&amp;page=$page&amp;style=$style";
+    $graph_params = "if=$iface&amp;page=$page&amp;style=$style&amp;graph=$graph";
     if ($page != 's') {
       echo '<div class=graph>';
         if ($graph_format == 'svg') {
-       print "<object type=\"image/svg+xml\" width=\"692\" height=\"297\" data=\"graph_svg.php?$graph_params\"></object>\n";
+       print "<object type=\"image/svg+xml\" data=\"graph_svg.php?$graph_params\"></object>\n";
         } else {
        print "<img src=\"graph.php?$graph_params\" alt=\"graph\"/>\n";
         }

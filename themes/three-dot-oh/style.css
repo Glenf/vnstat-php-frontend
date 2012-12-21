@@ -20,6 +20,7 @@
 
 /* Grid */
 
+@media only screen and (min-width:768px ){
 .navigation,
 .content {
   display:block;
@@ -35,7 +36,7 @@
   margin-left : 2%;
   width : 78%;
 }
-
+}
 
 /* Theme */
 
