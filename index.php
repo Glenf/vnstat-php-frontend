@@ -158,6 +158,12 @@
 
   
   <link rel="stylesheet" href="themes/<?php echo $style ?>/style.css"/>
+<?php
+    if (is_file('themes/'.$style.'/js/script.js') ) {
+      echo '<script src="themes/'.$style.'/js/script.js"></script>';
+    }
+?>
+
 </head>
 <body class=<?php echo $style ?>>
 
